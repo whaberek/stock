@@ -2,14 +2,14 @@ import React, { memo } from 'react';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import { Navbar } from 'components/Navbar';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { Container } from 'App.styles';
 import { Dashboard } from 'scenes/dashboard';
 import { Companies } from 'scenes/companies';
 
 export const App = memo(() => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Navbar />
       <Box
         component="main"
@@ -23,11 +23,11 @@ export const App = memo(() => {
         <Toolbar/>
         <Container>
           <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/companies" element={<Companies />} />
+            <Route path="/stock/" element={<Dashboard />} />
+            <Route path="/stock/companies" element={<Companies />} />
           </Routes>
         </Container>
       </Box>
-    </BrowserRouter>
+    </HashRouter>
   );
 });
